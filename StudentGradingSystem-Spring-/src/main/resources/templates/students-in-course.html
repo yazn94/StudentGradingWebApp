@@ -1,0 +1,26 @@
+<html>
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<head>
+    <title>Students in Course</title>
+</head>
+
+<body>
+<div class="container">
+    <h1>Students in Course</h1>
+    <form method="post" th:action="@{view-students-in-course}">
+        <div class="form-group">
+            <label for="courseId">Enter Course ID:</label>
+            <input id="courseId" name="courseId" required type="text">
+        </div>
+        <br>
+        <input class="button" onclick="location.href=
+                   '/grading-system'" type="button"
+               value="Back">
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+</div>
+</body>
+</html>
+

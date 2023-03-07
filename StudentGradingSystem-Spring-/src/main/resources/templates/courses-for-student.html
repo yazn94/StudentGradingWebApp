@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        .container{
+            margin-top: 90px !important;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Finished Courses For Student</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+    <h1>Finished Courses For Student</h1>
+    <br>
+    <form th:action="@{view-courses-for-student}" method="post">
+        <label for="studentId">Enter Student ID:</label>
+        <input id="studentId" name="studentId" required type="text">
+        <br>
+        <br>
+        <br>
+        <input type="button" class="button" value="Back"
+                                                   onclick="location.href=
+                   '/grading-system'">
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    </div>
+</div>
+</body>
+</html>

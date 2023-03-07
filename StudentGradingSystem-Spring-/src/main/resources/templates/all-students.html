@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<head>
+    <title>All Students Page</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #ddd;
+            color: black;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>All Students</h1>
+
+    <table style="width: 50rem !important;">
+        <tr>
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Phone</th>
+        </tr>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.getId()}"></td>
+            <td th:text="${student.getFirstName()}"></td>
+            <td th:text="${student.getLastName()}"></td>
+            <td th:text="${student.getAge()}"></td>
+            <td th:text="${student.getPhone()}"></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <input class="button" onclick="location.href=
+                   '/grading-system'" type="button"
+           value="Back">
+</div>
+</body>
+</html>

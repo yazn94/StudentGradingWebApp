@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Students In Course</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <style>
+        .container{
+            margin-top: 90px !important;
+
+        }
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+        <h1 th:text="'Students in the ' + ${course.name} + ' course'"></h1>
+        <br>
+        <table style="width: 50rem !important;">
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Grade</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="grade : ${grades}">
+                <td th:text="${grade.getStudentFirstName()}"></td>
+                <td th:text="${grade.getStudentLastName()}"></td>
+                <td th:text="${grade.grade}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <input class="button" onclick="location.href=
+                   '/students-in-course'" type="button"
+           value="Back">    </div>
+</div>
+</body>
+</html>
